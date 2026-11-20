@@ -1,0 +1,13 @@
+
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+
+    "files.associations": {
+        "**/templates/**/*.html": "html"
+    },
+
+    "django.templates.autoDiscover": true,
+
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+}
