@@ -1,5 +1,40 @@
-{% if page.has_previous %}
-    <a href="?page={{ page.previous_page_number }}">Previous</a>
-{% endif %}
 
+<div class="pagination-container">
+    <div class="pagination">
 
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}" class="page-btn">
+                Previous
+            </a>
+        {% else %}
+            <span class="page-btn disabled">Previous</span>
+        {% endif %}
+
+        <div class="page-numbers">
+
+            <a href="?page=1"
+               class="page-number {% if page.number == 1 %}active{% endif %}">
+                1
+            </a>
+
+            {% if page.paginator.num_pages > 1 %}
+                <span class="dots">...</span>
+
+                <a href="?page={{ page.paginator.num_pages }}"
+                   class="page-number {% if page.number == page.paginator.num_pages %}active{% endif %}">
+                    {{ page.paginator.num_pages }}
+                </a>
+            {% endif %}
+
+        </div>
+
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}" class="page-btn">
+                Next
+            </a>
+        {% else %}
+            <span class="page-btn disabled">Next</span>
+        {% endif %}
+
+    </div>
+</div>

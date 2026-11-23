@@ -1,12 +1,41 @@
+
 {% extends 'parent/base.html' %}
-{% block title %} product detail {% endblock  %}
+
+{% block title %}{{ product.name }} | Product Detail{% endblock %}
+
 {% block content %}
-    <h1>product detail</h1>
-    <h2>{{product.name}}</h2>
-    <h2>{{product.price}}</h2>
-    <p>{{prduct.description | linebreaks }}</p>
-    <hr>
-    <p>{{product.created}}</p>
-    
-{% endblock  %}
+
+<div class="product-detail-wrapper">
+
+    <div class="product-detail-card">
+
+        <div class="product-detail-header">
+            <span class="product-label">PRODUCT DETAILS</span>
+            <h1>{{ product.name }}</h1>
+        </div>
+
+        <div class="product-price">
+            {{ product.price }}
+        </div>
+
+        <div class="product-description">
+            <h3>Description</h3>
+            <p>{{ product.description|linebreaks }}</p>
+        </div>
+
+        <div class="product-meta">
+            <span>Added to catalog</span>
+            <p>{{ product.created }}</p>
+        </div>
+
+        <a href="javascript:history.back()" class="back-button">
+            &larr; Back
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
 

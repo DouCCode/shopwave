@@ -12,7 +12,7 @@ def index(request):
 def product_list(request):
     products = Product.available_products.all()
     paginator = Paginator(products, 2)
-    page_number = request.GET.get('products', 2)
+    page_number = request.GET.get('page', 1) # changed 'products' to 'page'
     products = paginator.page(page_number)
 
     context = {
