@@ -37,17 +37,8 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/Nima-tech3/shopwave.git
 
-    cd shopwave
+   sh shopwave/setup.sh
 
-    python -m venv venv
-
-    source venv/bin/activate
-
-    pip install -r requirements.txt
-
-    python manage.py migrate
-
-    python manage.py runserver
 
 
 ### 💻 Usage
